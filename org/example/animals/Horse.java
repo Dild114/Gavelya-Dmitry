@@ -15,7 +15,7 @@ public class Horse extends Overland implements Herbivorous {
 
   @Override
   public void typeAnimal() {
-    System.out.println("Herbivorous");
+    System.out.println("Horse - Herbivorous");
   }
   @Override
   public void walk() {
