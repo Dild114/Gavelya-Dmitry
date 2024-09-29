@@ -11,7 +11,7 @@ public class Dolphin extends Waterfowl implements Predator {
 
   @Override
   public void typeAnimal() {
-    System.out.println("Dolphin - waterfowl");
+    System.out.println("Dolphin - predator");
   }
 
   @Override
