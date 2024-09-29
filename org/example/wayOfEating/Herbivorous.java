@@ -1,6 +1,7 @@
 package org.example.wayOfEating;
 
 public interface Herbivorous {
-  void eat();
+  void printEat();
+  void eat(String food);
   void typeAnimal();
 }

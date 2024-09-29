@@ -2,5 +2,6 @@ package org.example.wayOfEating;
 
 public interface Predator {
   void typeAnimal();
-  void eat();
+  void printEat();
+  void eat(String food);
 }

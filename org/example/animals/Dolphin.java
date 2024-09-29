@@ -15,7 +15,16 @@ public class Dolphin extends Waterfowl implements Predator {
   }
 
   @Override
-  public void eat() {
+  public void printEat() {
     System.out.println("Dolphin eat fish");
+  }
+
+  @Override
+  public void eat(String food) {
+    if (food.equals("Fish") || food.equals("fish")) {
+      System.out.println("Dolphin eat fish");
+    } else {
+      System.out.println("Dolphin doesn't eat it");
+    }
   }
 }

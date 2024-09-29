@@ -10,12 +10,22 @@ public class Eagle extends Flying implements Predator {
   }
 
   @Override
-  public void eat() {
+  public void printEat() {
     System.out.println("Eagle eat meat");
   }
 
   @Override
   public void fly() {
+
     System.out.println("Eagle fly");
+  }
+
+  @Override
+  public void eat(String food) {
+    if (food.equals("Meat") || food.equals("meat")) {
+      System.out.println("Eagle eat meat");
+    } else {
+      System.out.println("Eagle doesn't eat it");
+    }
   }
 }

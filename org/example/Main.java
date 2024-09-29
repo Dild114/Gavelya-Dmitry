@@ -8,22 +8,23 @@ public class Main {
   public static void main(String[] args) {
     Camel camel = new Camel();
     camel.walk();
-    camel.eat();
+    camel.printEat();
+    camel.eat("Grass");
     camel.typeAnimal();
 
     Tiger tiger = new Tiger();
-    tiger.eat();
+    tiger.printEat();
     tiger.walk();
     tiger.typeAnimal();
 
     Eagle eagle = new Eagle();
     eagle.fly();
-    eagle.eat();
+    eagle.printEat();
     eagle.typeAnimal();
 
     Dolphin dolphin = new Dolphin();
     dolphin.swim();
-    dolphin.eat();
+    dolphin.printEat();
     dolphin.typeAnimal();
 
     Flying flying = new Flying();

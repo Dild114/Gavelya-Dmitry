@@ -10,7 +10,16 @@ public class Camel extends Overland implements Herbivorous{
   }
 
   @Override
-  public void eat() {
+  public void eat(String food) {
+    if (food.equals("grass") || food.equals("Grass")) {
+      System.out.println("Camel eat grass");
+    } else {
+      System.out.println("Camel doesn't eat it");
+    }
+  }
+
+  @Override
+  public void printEat() {
     System.out.println("Camel eat grass");
   }
 
