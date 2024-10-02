@@ -1,6 +1,5 @@
 Date.yml
 .idea/
-.idea
 .idea/.gitignore
 .idea/JavaHW2.iml
 .idea/compiler.xml
@@ -11,7 +10,6 @@ Date.yml
 .idea/uiDesigner.xml
 .idea/vcs.xml
 target/classes/org/example/Main.class
-target
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
