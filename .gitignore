@@ -1,4 +1,6 @@
 Date.yml
+.idea/
+.idea
 .idea/.gitignore
 .idea/JavaHW2.iml
 .idea/compiler.xml
