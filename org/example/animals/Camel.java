@@ -3,7 +3,7 @@ package org.example.animals;
 import org.example.area.Overland;
 import org.example.wayOfEating.Herbivorous;
 
-public class Camel extends Overland implements Herbivorous{
+public class Camel extends Animals implements Herbivorous, Overland{
   @Override
   public void walk() {
     System.out.println("Camel walk");

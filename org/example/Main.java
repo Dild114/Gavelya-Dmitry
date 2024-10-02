@@ -26,11 +26,5 @@ public class Main {
     dolphin.swim();
     dolphin.printEat();
     dolphin.typeAnimal();
-
-    Flying flying = new Flying();
-    flying.fly();
-
-    Overland overland = new Overland();
-    overland.walk();
   }
 }
