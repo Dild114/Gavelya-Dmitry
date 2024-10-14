@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.sorter.BubleSort;
+import org.example.BubleSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

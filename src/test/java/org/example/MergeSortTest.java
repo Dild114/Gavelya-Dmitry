@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.sorter.MergeSort;
+import org.example.MergeSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
