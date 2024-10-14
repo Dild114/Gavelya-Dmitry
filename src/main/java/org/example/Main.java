@@ -1,9 +1,9 @@
 package org.example;
 
-import org.example.sorter.BubleSort;
-import org.example.sorter.MergeSort;
-import org.example.sorter.SortType;
-import org.example.sorter.SortsManager;
+import org.example.BubleSort;
+import org.example.MergeSort;
+import org.example.SortType;
+import org.example.SortsManager;
 
 import java.sql.Array;
 import java.util.ArrayList;

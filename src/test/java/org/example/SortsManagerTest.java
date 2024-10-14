@@ -1,10 +1,10 @@
 package org.example;
 
 import com.sun.jdi.IncompatibleThreadStateException;
-import org.example.sorter.BubleSort;
-import org.example.sorter.MergeSort;
-import org.example.sorter.SortType;
-import org.example.sorter.SortsManager;
+import org.example.BubleSort;
+import org.example.MergeSort;
+import org.example.SortType;
+import org.example.SortsManager;
 import org.junit.jupiter.api.Test;
 import org.opentest4j.IncompleteExecutionException;
 

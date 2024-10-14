@@ -1,6 +1,4 @@
-package org.example.sorter;
-
-import org.example.CloneList;
+package org.example;
 
 import java.util.Collections;
 import java.util.List;

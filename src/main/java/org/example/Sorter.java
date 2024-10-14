@@ -1,4 +1,4 @@
-package org.example.sorter;
+package org.example;
 
 abstract public class Sorter implements SortInterface {
   protected int limitElement;

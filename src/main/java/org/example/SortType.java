@@ -1,4 +1,4 @@
-package org.example.sorter;
+package org.example;
 
 public enum SortType {
   MERGE,
