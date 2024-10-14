@@ -1,7 +1,5 @@
-package org.example;
-import org.example.sorter.SortInterface;
-import org.example.sorter.SortType;
-import org.example.sorter.Sorter;
+package org.example.sorter;
+import org.example.CloneList;
 
 import java.util.List;
 

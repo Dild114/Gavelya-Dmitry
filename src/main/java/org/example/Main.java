@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.sorter.BubleSort;
+import org.example.sorter.MergeSort;
 import org.example.sorter.SortType;
 import org.example.sorter.SortsManager;
 

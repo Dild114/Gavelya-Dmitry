@@ -1,9 +1,8 @@
-package org.example;
+package org.example.sorter;
 
-import org.example.sorter.SortType;
-import org.example.sorter.Sorter;
+import org.example.CloneList;
 
-import java.util.*;
+import java.util.Collections;
 import java.util.List;
 
 public class MergeSort extends Sorter {

@@ -1,6 +1,8 @@
 package org.example;
 
 import com.sun.jdi.IncompatibleThreadStateException;
+import org.example.sorter.BubleSort;
+import org.example.sorter.MergeSort;
 import org.example.sorter.SortType;
 import org.example.sorter.SortsManager;
 import org.junit.jupiter.api.Test;
