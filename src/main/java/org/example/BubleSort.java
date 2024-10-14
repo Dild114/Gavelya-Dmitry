@@ -1,31 +1,21 @@
 package org.example;
+import org.example.sorter.SortInterface;
+import org.example.sorter.SortType;
+import org.example.sorter.Sorter;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class BubleSort {
-  private static int MAXIMUM_NUMBER_OF_ELEMENTS = 50;
-
-  public BubleSort() {
+public class BubleSort extends Sorter implements SortInterface {
+  public BubleSort(int limit) {
+    super(limit);
   }
 
-  public BubleSort(int MAXIMUM_NUMBER_OF_ELEMENTS) {
-    this.MAXIMUM_NUMBER_OF_ELEMENTS = MAXIMUM_NUMBER_OF_ELEMENTS;
-  }
-
-  private static List<Integer> clons(List<Integer> array) {
-    List<Integer> newArray = new ArrayList<>();
-    for (Integer i : array) {
-      newArray.add(i);
-    }
-    return newArray;
-  }
-
-  public static List<Integer> bubbleSort(List<Integer> arr) throws RuntimeException {
-    if (arr.size() > MAXIMUM_NUMBER_OF_ELEMENTS) {
+  @Override
+  public List<Integer> sort(List<Integer> arr) throws RuntimeException {
+    if ((arr.size() > limitElement) || (arr.size() <= 0)) {
       throw new RuntimeException("Invalid length");
     }
-    List<Integer> newList = clons(arr);
+    List<Integer> newList = CloneList.clone(arr);
     for (int i = 0; i < newList.size(); i++) {
       for (int j = i + 1; j < newList.size(); j++) {
         if (newList.get(i) > newList.get(j)) {
@@ -36,5 +26,20 @@ public class BubleSort {
       }
     }
     return newList;
+  }
+
+  @Override
+  public int getLimit() {
+    return limitElement;
+  }
+
+  @Override
+  public SortType type() {
+    return SortType.BUBBLE;
+  }
+
+  @Override
+  public void setLimit(int limit) {
+    limitElement = limit;
   }
 }

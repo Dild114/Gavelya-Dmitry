@@ -1,32 +1,29 @@
 package org.example;
 
+import org.example.sorter.SortType;
+import org.example.sorter.Sorter;
+
 import java.util.*;
 import java.util.List;
 
-public class MergeSort {
-  private List<Integer> list = new ArrayList<>();
-  private static int MAXIMUM_NUMBER_OF_ELEMENTS = 99;
+public class MergeSort extends Sorter {
 
-  public MergeSort() {
+  public MergeSort(int limit) {
+    super(limit);
   }
-  public MergeSort(int MAXIMUM_NUMBER_OF_ELEMENTS) {
-    this.MAXIMUM_NUMBER_OF_ELEMENTS = MAXIMUM_NUMBER_OF_ELEMENTS;
-  }
-  private static List<Integer> clons(List<Integer> array) {
-    List<Integer> newArray = new ArrayList<>();
-    for (Integer i : array) {
-      newArray.add(i);
+
+  @Override
+  public List<Integer> sort(List<Integer> list) throws RuntimeException {
+    if ((list.size() > limitElement)) {
+      throw new IllegalArgumentException("Invalid length");
     }
-    return newArray;
-  }
-
-  public static List<Integer> sort(List<Integer> list) throws RuntimeException {
-    if (list.size() > MAXIMUM_NUMBER_OF_ELEMENTS) {
-      throw new RuntimeException("Invalid length");
-    }
-
-    List<Integer> newList = clons(list);
+    List<Integer> newList = CloneList.clone(list);
     Collections.sort(newList);
     return newList;
+  }
+
+  @Override
+  public SortType type() {
+    return SortType.MERGE;
   }
 }
