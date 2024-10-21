@@ -1,6 +1,5 @@
 package org.example;
 
-import com.sun.jdi.IncompatibleThreadStateException;
 import org.example.BubleSort;
 import org.example.MergeSort;
 import org.example.SortType;
