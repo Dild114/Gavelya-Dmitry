@@ -55,7 +55,7 @@ public class ArticleService {
         try {
             article = articleRepository.findById(articleId);
         } catch (ArticleNotFoundException e) {
-            throw new ArticleUpdateException("Article with id " + articleId + " not found");
+            throw new ArticleUpdateException("Article with id " + articleId + " not found", e);
         }
          try {
              articleRepository.update(
@@ -65,7 +65,7 @@ public class ArticleService {
 
              );
          } catch (ArticleNotFoundException e) {
-             throw new ArticleUpdateException("Article with id " + articleId + " not found");
+             throw new ArticleUpdateException("Article with id " + articleId + " not found", e);
          }
     }
 }

@@ -20,7 +20,7 @@ public class CommentController implements Controller {
     CommentService commentService;
     ObjectMapper objectMapper;
 
-    public CommentController(Service service ,CommentService commentService, ObjectMapper objectMapper) {
+    public CommentController(Service service, CommentService commentService, ObjectMapper objectMapper) {
         this.service = service;
         this.commentService = commentService;
         this.objectMapper = objectMapper;
@@ -34,41 +34,41 @@ public class CommentController implements Controller {
 
     private void createComment() {
         service.post("api/article/comment/:articleId",
-                (Request request, Response response) -> {
-            response.type("application/json");
-            String body = request.body();
-            CommentCreateByIdArticleRequest commentCreate = objectMapper.
+            (Request request, Response response) -> {
+                response.type("application/json");
+                String body = request.body();
+                CommentCreateByIdArticleRequest commentCreate = objectMapper.
                     readValue(body, CommentCreateByIdArticleRequest.class);
 
-            try {
-                CommentId commentId = commentService.create(commentCreate.articleId(), commentCreate.comment());
-                response.status(201);
-                LOG.warn("New comment created: {}", commentId);
-                return objectMapper.writeValueAsString(commentId);
-            } catch (CommentDuplicateException e) {
-                response.status(400);
-                LOG.warn("Duplicate comment: {} with id: {}", e.getMessage(), commentCreate.articleId());
-                return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
-            }
-                });
+                try {
+                    CommentId commentId = commentService.create(commentCreate.articleId(), commentCreate.comment());
+                    response.status(201);
+                    LOG.warn("New comment created: {}", commentId);
+                    return objectMapper.writeValueAsString(commentId);
+                } catch (CommentDuplicateException e) {
+                    response.status(400);
+                    LOG.warn("Duplicate comment: {} with id: {}", e.getMessage(), commentCreate.articleId());
+                    return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
+                }
+            });
     }
 
     private void deleteComment() {
         service.delete("api/article/comment/:articleId",
-                (Request request, Response response) -> {
-            response.type("application/json");
-            CommentDeleteByIdArticleRequest commentDelete = objectMapper.
+            (Request request, Response response) -> {
+                response.type("application/json");
+                CommentDeleteByIdArticleRequest commentDelete = objectMapper.
                     readValue(request.body(), CommentDeleteByIdArticleRequest.class);
-            try {
-                commentService.delete(commentDelete.commentId());
-                response.status(204);
-                LOG.warn("Comment deleted: {}", commentDelete.commentId());
-                return objectMapper.writeValueAsString(commentDelete.commentId());
-            } catch (CommentNotFoundException e) {
-                response.status(404);
-                LOG.warn("Comment not found: {}", commentDelete.commentId(), e);
-                return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
-            }
-                });
+                try {
+                    commentService.delete(commentDelete.commentId());
+                    response.status(204);
+                    LOG.warn("Comment deleted: {}", commentDelete.commentId());
+                    return objectMapper.writeValueAsString(commentDelete.commentId());
+                } catch (CommentNotFoundException e) {
+                    response.status(404);
+                    LOG.warn("Comment not found: {}", commentDelete.commentId(), e);
+                    return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
+                }
+            });
     }
 }
