@@ -22,31 +22,9 @@ public class InMemoryCommentRepository implements CommentRepository {
     }
 
     @Override
-    public List<Comment> findAll() {
-        return new ArrayList<>(commentMap.values());
-    }
-
-    @Override
-    public Comment findById(CommentId id) {
-        Comment comment = commentMap.get(id);
-        if (comment == null) {
-            throw new CommentNotFoundException("Comment with id " + id + " not found");
-        }
-        return comment;
-    }
-
-    @Override
     public void create(Comment comment) {
         if (commentMap.get(comment.getId()) != null) {
             throw new CommentDuplicateException("Comment with id " + comment.getId() + " already exists");
-        }
-        commentMap.put(comment.getId(), comment);
-    }
-
-    @Override
-    public void update(Comment comment) {
-        if (commentMap.get(comment.getId()) == null) {
-            throw new CommentNotFoundException("Comment with id " + comment.getId() + " not found");
         }
         commentMap.put(comment.getId(), comment);
     }

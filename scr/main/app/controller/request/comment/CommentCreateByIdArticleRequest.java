@@ -1,5 +1,5 @@
 package app.controller.request.comment;
 
-import app.entity.Article;
+import app.entity.id.ArticleId;
 
-public record CommentCreateByIdArticleRequest(Article articleId, String comment) {}
+public record CommentCreateByIdArticleRequest(ArticleId articleId, String comment) {}

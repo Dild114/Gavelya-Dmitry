@@ -1,11 +1,9 @@
 package app.controller;
 
 import app.controller.request.article.ArticleCreateRequest;
-import app.controller.request.article.ArticleFindAllRequest;
 import app.controller.request.article.ArticleUpdateRequest;
 import app.controller.response.ErrorResponse;
 import app.entity.Article;
-import app.entity.Comment;
 import app.entity.id.ArticleId;
 import app.repository.exception.ArticleNotFoundException;
 import app.service.ArticleService;
@@ -18,8 +16,9 @@ import spark.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import spark.Response;
 import spark.Request;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -77,7 +76,7 @@ public class ArticleController implements Controller {
                 response.status(200);
                 return objectMapper.writeValueAsString(articleId);
             } catch (ArticleUpdateException e) {
-                LOG.warn("Not found article Id: {} and exception", articleId, e.getMessage());
+                LOG.warn("Not found article Id: {} and exception", articleId, e);
                 response.status(404);
                 return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
             }
