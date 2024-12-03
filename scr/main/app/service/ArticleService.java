@@ -29,7 +29,7 @@ public class ArticleService {
         try {
             return articleRepository.findById(id);
         } catch (ArticleNotFoundException e) {
-            throw new ArticleFindException("Article with id " + id + " not found");
+            throw new ArticleFindException("Article with id " + id + " not found", e);
         }
     }
     public void delete(ArticleId id) throws ArticleDeleteByIdException {
