@@ -12,5 +12,4 @@ jobs:
     steps:
     - name: Get current datetime
       run: |
-        CURRENTDATETIME=`date +"%A, %b %d, %Y %H:%M:%S"`
-        echo Current Date and Time is: ${CURRENTDATETIME}
+        maven verify
