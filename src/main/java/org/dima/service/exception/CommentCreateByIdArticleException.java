@@ -1,4 +1,4 @@
-package org.dima.service.exception.comment;
+package org.dima.service.exception;
 
 public class CommentCreateByIdArticleException extends Exception {
     public CommentCreateByIdArticleException(String message) {

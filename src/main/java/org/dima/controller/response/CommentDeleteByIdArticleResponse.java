@@ -1,4 +1,4 @@
-package org.dima.controller.response.comment;
+package org.dima.controller.response;
 
 public class CommentDeleteByIdArticleResponse {
 }

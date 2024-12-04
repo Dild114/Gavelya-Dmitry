@@ -6,10 +6,10 @@ import org.dima.entity.id.ArticleId;
 import org.dima.repository.ArticleRepository;
 import org.dima.repository.exception.ArticleDuplicateException;
 import org.dima.repository.exception.ArticleNotFoundException;
-import org.dima.service.exception.article.ArticleCreateException;
-import org.dima.service.exception.article.ArticleDeleteByIdException;
-import org.dima.service.exception.article.ArticleFindException;
-import org.dima.service.exception.article.ArticleUpdateException;
+import org.dima.service.exception.ArticleCreateException;
+import org.dima.service.exception.ArticleDeleteByIdException;
+import org.dima.service.exception.ArticleFindException;
+import org.dima.service.exception.ArticleUpdateException;
 import java.util.List;
 import java.util.Set;
 

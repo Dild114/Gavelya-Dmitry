@@ -1,4 +1,4 @@
-package org.dima.controller.request.comment;
+package org.dima.controller.request;
 
 import org.dima.entity.id.ArticleId;
 

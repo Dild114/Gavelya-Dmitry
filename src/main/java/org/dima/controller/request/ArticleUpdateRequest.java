@@ -1,6 +1,5 @@
-package org.dima.controller.request.article;
+package org.dima.controller.request;
 
-import org.dima.entity.Comment;
 import org.dima.entity.id.ArticleId;
 
 import java.util.List;

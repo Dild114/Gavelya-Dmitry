@@ -1,4 +1,4 @@
-package org.dima.service.exception.article;
+package org.dima.service.exception;
 
 public class ArticleUpdateException extends Exception {
 

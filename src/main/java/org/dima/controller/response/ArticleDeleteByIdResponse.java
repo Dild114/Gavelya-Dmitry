@@ -1,3 +1,3 @@
-package org.dima.controller.response.article;
+package org.dima.controller.response;
 
 public record ArticleDeleteByIdResponse() {}

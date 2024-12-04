@@ -1,4 +1,4 @@
-package org.dima.service.exception.article;
+package org.dima.service.exception;
 
 public class ArticleDeleteByIdException extends Exception {
     public ArticleDeleteByIdException(String message) {

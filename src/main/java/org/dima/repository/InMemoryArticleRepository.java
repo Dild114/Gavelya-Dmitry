@@ -1,8 +1,7 @@
-package org.dima.repository.memory;
+package org.dima.repository;
 
 import org.dima.entity.Article;
 import org.dima.entity.id.ArticleId;
-import org.dima.repository.ArticleRepository;
 import org.dima.repository.exception.ArticleDuplicateException;
 import org.dima.repository.exception.ArticleNotFoundException;
 

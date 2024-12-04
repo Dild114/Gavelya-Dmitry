@@ -1,8 +1,7 @@
-package org.dima.repository.memory;
+package org.dima.repository;
 
 import org.dima.entity.Comment;
 import org.dima.entity.id.CommentId;
-import org.dima.repository.CommentRepository;
 import org.dima.repository.exception.CommentDuplicateException;
 import org.dima.repository.exception.CommentNotFoundException;
 

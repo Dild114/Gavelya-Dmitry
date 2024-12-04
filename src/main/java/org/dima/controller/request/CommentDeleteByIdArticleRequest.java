@@ -1,4 +1,4 @@
-package org.dima.controller.request.comment;
+package org.dima.controller.request;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

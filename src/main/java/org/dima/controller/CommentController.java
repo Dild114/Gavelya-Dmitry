@@ -1,7 +1,7 @@
 package org.dima.controller;
 
-import org.dima.controller.request.comment.CommentCreateByIdArticleRequest;
-import org.dima.controller.request.comment.CommentDeleteByIdArticleRequest;
+import org.dima.controller.request.CommentCreateByIdArticleRequest;
+import org.dima.controller.request.CommentDeleteByIdArticleRequest;
 import org.dima.controller.response.ErrorResponse;
 import org.dima.entity.Article;
 import org.dima.entity.id.ArticleId;
@@ -9,7 +9,7 @@ import org.dima.entity.id.CommentId;
 import org.dima.repository.exception.CommentDuplicateException;
 import org.dima.repository.exception.CommentNotFoundException;
 import org.dima.service.CommentService;
-import org.dima.service.exception.comment.CommentCreateByIdArticleException;
+import org.dima.service.exception.CommentCreateByIdArticleException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Service;
@@ -58,18 +58,20 @@ public class CommentController implements Controller {
 
     private void deleteComment() {
         // когда url api/article/comment то запрос уходит на deleteArticle, deleteArticle воспринимаем comment, как :articleId
-        service.delete("api/article/comment/delete",
+        service.delete("api/article/delete/comment/:articleId/:commentId",
             (Request request, Response response) -> {
                 response.type("application/json");
-                CommentDeleteByIdArticleRequest commentDelete = objectMapper.readValue(request.body(), CommentDeleteByIdArticleRequest.class);
+                ArticleId articleId = new ArticleId(Long.parseLong(request.params("articleId")));
+                CommentId commentId = new CommentId(Long.parseLong(request.params("commentId")));
+
                 try {
-                    commentService.delete(new CommentId(commentDelete.commentId()), new ArticleId(commentDelete.articleId()));
+                    commentService.delete(commentId, articleId);
                     response.status(204);
-                    LOG.debug("Comment deleted: {}", commentDelete.commentId());
-                    return objectMapper.writeValueAsString(commentDelete.commentId());
+                    LOG.debug("Comment deleted: {}", commentId);
+                    return objectMapper.writeValueAsString(commentId);
                 } catch (CommentNotFoundException e) {
                     response.status(404);
-                    LOG.warn("Comment not found: {}", commentDelete.commentId(), e);
+                    LOG.warn("Comment not found: {}", commentId, e);
                     return objectMapper.writeValueAsString(new ErrorResponse(e.getMessage()));
                 }
             });

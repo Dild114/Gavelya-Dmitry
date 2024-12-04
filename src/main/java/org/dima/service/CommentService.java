@@ -9,7 +9,7 @@ import org.dima.repository.CommentRepository;
 import org.dima.repository.exception.ArticleNotFoundException;
 import org.dima.repository.exception.CommentDuplicateException;
 import org.dima.repository.exception.CommentNotFoundException;
-import org.dima.service.exception.comment.CommentCreateByIdArticleException;
+import org.dima.service.exception.CommentCreateByIdArticleException;
 
 import java.util.ArrayList;
 import java.util.List;

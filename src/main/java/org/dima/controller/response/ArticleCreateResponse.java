@@ -1,4 +1,4 @@
-package org.dima.controller.response.article;
+package org.dima.controller.response;
 
 import org.dima.entity.id.ArticleId;
 

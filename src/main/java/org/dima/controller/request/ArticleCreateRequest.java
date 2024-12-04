@@ -1,4 +1,4 @@
-package org.dima.controller.request.article;
+package org.dima.controller.request;
 
 import java.util.Set;
 

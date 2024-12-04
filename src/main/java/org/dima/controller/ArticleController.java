@@ -1,7 +1,7 @@
 package org.dima.controller;
 
-import org.dima.controller.request.article.ArticleCreateRequest;
-import org.dima.controller.request.article.ArticleUpdateRequest;
+import org.dima.controller.request.ArticleCreateRequest;
+import org.dima.controller.request.ArticleUpdateRequest;
 import org.dima.controller.response.ErrorResponse;
 import org.dima.entity.Article;
 import org.dima.entity.Comment;
@@ -9,9 +9,9 @@ import org.dima.entity.id.ArticleId;
 import org.dima.entity.id.CommentId;
 import org.dima.repository.exception.ArticleNotFoundException;
 import org.dima.service.ArticleService;
-import org.dima.service.exception.article.ArticleCreateException;
-import org.dima.service.exception.article.ArticleFindException;
-import org.dima.service.exception.article.ArticleUpdateException;
+import org.dima.service.exception.ArticleCreateException;
+import org.dima.service.exception.ArticleFindException;
+import org.dima.service.exception.ArticleUpdateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Service;
